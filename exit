@@ -1,0 +1,23 @@
+[33mcommit 5104f40f45ec84382059ded7fe92919a24dbba50[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: sunsetPC\sunset <moistest.ink@gmail.com>
+Date:   Mon Jan 2 21:14:11 2023 +0900
+
+    ENH: User 모델 추가
+
+[33mcommit e5aafdc7e62641ed1631f4771be500ebdff7c8fb[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: sunsetPC\sunset <moistest.ink@gmail.com>
+Date:   Mon Jan 2 20:43:06 2023 +0900
+
+    ENH: 프로젝트 세팅 및 mysql 연결
+
+[33mcommit e572853906c0b21d489bc176f099801eb6e4fa2e[m
+Author: sunsetPC\sunset <moistest.ink@gmail.com>
+Date:   Mon Jan 2 20:21:04 2023 +0900
+
+    ENH: 프로젝트 세팅 및 mysql 연결
+
+[33mcommit 6dc63b6303abf7bae66bbea6ea8c744dee92cb91[m
+Author: sunsetPC\sunset <moistest.ink@gmail.com>
+Date:   Mon Jan 2 19:01:49 2023 +0900
+
+    first commit
