@@ -25,14 +25,6 @@
         "documentation": {}
     },
     {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
-        "documentation": {}
-    },
-    {
         "label": "pymysql",
         "kind": 6,
         "isExtraImport": true,
@@ -42,11 +34,19 @@
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
         "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -66,7 +66,15 @@
         "documentation": {}
     },
     {
-        "label": "path",
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -74,7 +82,7 @@
         "documentation": {}
     },
     {
-        "label": "include",
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -187,43 +195,27 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "permissions",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "BaseUserManager",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "AbstractBaseUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
@@ -235,11 +227,59 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
+        "label": "permissions",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "user.models",
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "Permalink",
+        "importPath": "receipt.models",
+        "description": "receipt.models",
+        "isExtraImport": true,
+        "detail": "receipt.models",
+        "documentation": {}
+    },
+    {
+        "label": "Receipt",
+        "importPath": "receipt.models",
+        "description": "receipt.models",
+        "isExtraImport": true,
+        "detail": "receipt.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -256,6 +296,70 @@
         "description": "rest_framework.views",
         "isExtraImport": true,
         "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractBaseUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "BaseUserManager",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairSerializer",
+        "importPath": "rest_framework_simplejwt.serializers",
+        "description": "rest_framework_simplejwt.serializers",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
+        "documentation": {}
+    },
+    {
+        "label": "TokenBlacklistView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
         "documentation": {}
     },
     {
@@ -281,7 +385,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nload_dotenv() \nSECRET_KEY = os.environ.get(\"SECRET_KEY\", \"DEFAULT\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nload_dotenv()\nSECRET_KEY = os.environ.get(\"SECRET_KEY\", \"DEFAULT\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -290,7 +394,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", \"DEFAULT\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"rest_framework\",\n    'rest_framework_simplejwt.token_blacklist\",\n    \"user\",\n    \"receipt\",",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", \"DEFAULT\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -299,7 +403,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"rest_framework\",\n    'rest_framework_simplejwt.token_blacklist\",\n    \"user\",\n    \"receipt\",\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -308,7 +412,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"rest_framework\",\n    'rest_framework_simplejwt.token_blacklist\",\n    \"user\",\n    \"receipt\",\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"user\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -317,7 +421,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    \"rest_framework\",\n    'rest_framework_simplejwt.token_blacklist\",\n    \"user\",\n    \"receipt\",\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"user\",\n    \"receipt\",\n    \"rest_framework\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -326,7 +430,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    \"django.middleware.security.SecurityMiddleware\",\n    \"django.contrib.sessions.middleware.SessionMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",\n    \"django.middleware.csrf.CsrfViewMiddleware\",\n    \"django.contrib.auth.middleware.AuthenticationMiddleware\",\n    \"django.contrib.messages.middleware.MessageMiddleware\",\n    \"django.middleware.clickjacking.XFrameOptionsMiddleware\",\n]\nROOT_URLCONF = \"Payhere.urls\"",
+        "peekOfCode": "MIDDLEWARE = [\n    \"django.middleware.security.SecurityMiddleware\",\n    \"django.contrib.sessions.middleware.SessionMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",\n    \"django.middleware.csrf.CsrfViewMiddleware\",\n    \"django.contrib.auth.middleware.AuthenticationMiddleware\",\n    \"django.contrib.messages.middleware.MessageMiddleware\",\n    \"django.middleware.clickjacking.XFrameOptionsMiddleware\",\n    \"corsheaders.middleware.CorsMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -335,7 +439,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "ROOT_URLCONF = \"Payhere.urls\"\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ],\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework.authentication.TokenAuthentication',\n        'rest_framework.authentication.SessionAuthentication'\n    ],\n    'DEFAULT_PARSER_CLASSES': [",
+        "peekOfCode": "ROOT_URLCONF = \"Payhere.urls\"\nREST_FRAMEWORK = {\n    \"DEFAULT_PERMISSION_CLASSES\": [\"rest_framework.permissions.AllowAny\"],\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n        \"rest_framework_simplejwt.authentication.JWTAuthentication\",\n        # \"rest_framework.authentication.TokenAuthentication\",\n        # \"rest_framework.authentication.SessionAuthentication\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -344,7 +448,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ],\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework.authentication.TokenAuthentication',\n        'rest_framework.authentication.SessionAuthentication'\n    ],\n    'DEFAULT_PARSER_CLASSES': [\n        'rest_framework.parsers.JSONParser',",
+        "peekOfCode": "REST_FRAMEWORK = {\n    \"DEFAULT_PERMISSION_CLASSES\": [\"rest_framework.permissions.AllowAny\"],\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n        \"rest_framework_simplejwt.authentication.JWTAuthentication\",\n        # \"rest_framework.authentication.TokenAuthentication\",\n        # \"rest_framework.authentication.SessionAuthentication\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n        \"rest_framework.parsers.FormParser\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -398,7 +502,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -407,7 +511,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -416,7 +520,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta\nSIMPLE_JWT = {",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -425,7 +529,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "STATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "STATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta\nSIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=3),\n    \"SIGNING_KEY\": SECRET_KEY,",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -434,7 +538,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta\nSIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=3),\n    \"SIGNING_KEY\": SECRET_KEY,\n    \"ROTATE_REFRESH_TOKENS\": True,\n    \"BLACKLIST_AFTER_ROTATION\": True,\n}",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -443,7 +547,16 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'user.User'",
+        "peekOfCode": "AUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta\nSIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=3),\n    \"SIGNING_KEY\": SECRET_KEY,\n    \"ROTATE_REFRESH_TOKENS\": True,\n    \"BLACKLIST_AFTER_ROTATION\": True,\n}",
+        "detail": "Payhere.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SIMPLE_JWT",
+        "kind": 5,
+        "importPath": "Payhere.settings",
+        "description": "Payhere.settings",
+        "peekOfCode": "SIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=3),\n    \"SIGNING_KEY\": SECRET_KEY,\n    \"ROTATE_REFRESH_TOKENS\": True,\n    \"BLACKLIST_AFTER_ROTATION\": True,\n}",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -452,7 +565,7 @@
         "kind": 5,
         "importPath": "Payhere.urls",
         "description": "Payhere.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path('users/', include('user.urls')), \n    path('receipts/', include('receipt.urls')), \n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"user.urls\")),\n    path(\"receipts/\", include(\"receipt.urls\")),\n]",
         "detail": "Payhere.urls",
         "documentation": {}
     },
@@ -475,6 +588,15 @@
         "documentation": {}
     },
     {
+        "label": "ReceiptAdmin",
+        "kind": 6,
+        "importPath": "receipt.admin",
+        "description": "receipt.admin",
+        "peekOfCode": "class ReceiptAdmin(admin.ModelAdmin):\n    list_display = ['id', 'user', 'content', 'outlay']\n    list_display_links = ['content', 'outlay']\n    list_filter = ('user',)\nadmin.site.register(Receipt, ReceiptAdmin)\nadmin.site.register(Permalink)",
+        "detail": "receipt.admin",
+        "documentation": {}
+    },
+    {
         "label": "ReceiptConfig",
         "kind": 6,
         "importPath": "receipt.apps",
@@ -488,7 +610,7 @@
         "kind": 6,
         "importPath": "receipt.models",
         "description": "receipt.models",
-        "peekOfCode": "class Receipt(models.Model):\n    user = models.ForeignKey('user.User', on_delete=models.CASCADE)\n    date = models.DateTimeField()\n    content = models.CharField(max_length=50)\n    outlay = models.IntegerField()\n    desc = models.CharField(max_length=200, blank=True)\n    create_date = models.DateTimeField(auto_now_add=True)\nclass Permalink(models.Model):\n    url = models.URLField(max_length=200)\n    refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)",
+        "peekOfCode": "class Receipt(models.Model):\n    user = models.ForeignKey(\"user.User\", on_delete=models.CASCADE)\n    date = models.DateTimeField()\n    content = models.CharField(max_length=50)\n    outlay = models.IntegerField()\n    desc = models.CharField(max_length=200, blank=True)\n    create_date = models.DateTimeField(auto_now_add=True)\nclass Permalink(models.Model):\n    url = models.URLField(max_length=200)\n    refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)",
         "detail": "receipt.models",
         "documentation": {}
     },
@@ -502,12 +624,48 @@
         "documentation": {}
     },
     {
+        "label": "ReceiptSerializer",
+        "kind": 6,
+        "importPath": "receipt.serializers",
+        "description": "receipt.serializers",
+        "peekOfCode": "class ReceiptSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ReceiptModel\n        fields = [\"user\", \"date\", \"content\", \"outlay\", \"desc\", \"create_date\"]\nclass PermalinkSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PermalinkModel\n        fields = [\"url\", \"refer_to\", \"end_date\"]",
+        "detail": "receipt.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PermalinkSerializer",
+        "kind": 6,
+        "importPath": "receipt.serializers",
+        "description": "receipt.serializers",
+        "peekOfCode": "class PermalinkSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PermalinkModel\n        fields = [\"url\", \"refer_to\", \"end_date\"]",
+        "detail": "receipt.serializers",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "receipt.urls",
         "description": "receipt.urls",
-        "peekOfCode": "urlpatterns = [\n    # path('', views.함수명.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.ReceiptListView.as_view()),\n    path(\"<int:receipt_id>/\", views.ReceiptDetailView.as_view()),\n]",
         "detail": "receipt.urls",
+        "documentation": {}
+    },
+    {
+        "label": "ReceiptListView",
+        "kind": 6,
+        "importPath": "receipt.views",
+        "description": "receipt.views",
+        "peekOfCode": "class ReceiptListView(APIView):\n    permission_classes = [permissions.IsAuthenticated]\n    def get(self, request):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)\n    def post(self, request):\n        return Response({\"message\": \"post method!!\"}, status=status.HTTP_200_OK)\nclass ReceiptDetailView(APIView):\n    permission_classes = [permissions.IsAuthenticated]\n    def get(self, request):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)",
+        "detail": "receipt.views",
+        "documentation": {}
+    },
+    {
+        "label": "ReceiptDetailView",
+        "kind": 6,
+        "importPath": "receipt.views",
+        "description": "receipt.views",
+        "peekOfCode": "class ReceiptDetailView(APIView):\n    permission_classes = [permissions.IsAuthenticated]\n    def get(self, request):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)\n    def post(self, request):\n        return Response({\"message\": \"post method!!\"}, status=status.HTTP_200_OK)\n    def put(self, request):\n        return Response({\"message\": \"put method!!\"}, status=status.HTTP_200_OK)\n    def delete(self, request):\n        return Response({\"message\": \"delete method!!\"}, status=status.HTTP_200_OK)",
+        "detail": "receipt.views",
         "documentation": {}
     },
     {
@@ -533,7 +691,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class UserManager(BaseUserManager):\n    def create_user(self, email, password=None):\n        if not email:\n            raise ValueError('Users must have an email')\n        user = self.model(\n            email=email,\n        )\n        user.set_password(password)\n        user.save(using=self._db)\n        return user",
+        "peekOfCode": "class UserManager(BaseUserManager):\n    def create_user(self, email, password=None):\n        if not email:\n            raise ValueError(\"Users must have an email\")\n        user = self.model(\n            email=email,\n        )\n        user.set_password(password)\n        user.save(using=self._db)\n        return user",
         "detail": "user.models",
         "documentation": {}
     },
@@ -542,7 +700,7 @@
         "kind": 6,
         "importPath": "user.models",
         "description": "user.models",
-        "peekOfCode": "class User(AbstractBaseUser):\n    email = models.EmailField(\"이메일 주소\", max_length=100, unique=True)\n    password = models.CharField(\"비밀번호\", max_length=128)\n    join_date = models.DateTimeField(\"가입일\", auto_now_add=True)\n    is_active = models.BooleanField(\"계정 활성화 여부\", default=True) \n    is_admin = models.BooleanField(\"관리자 권한\", default=False)\n    USERNAME_FIELD = 'email'\n    REQUIRED_FIELDS = []\n    objects = UserManager()\n    def __str__(self):",
+        "peekOfCode": "class User(AbstractBaseUser):\n    email = models.EmailField(\"이메일 주소\", max_length=100, unique=True)\n    password = models.CharField(\"비밀번호\", max_length=128)\n    join_date = models.DateTimeField(\"가입일\", auto_now_add=True)\n    is_active = models.BooleanField(\"계정 활성화 여부\", default=True)\n    is_admin = models.BooleanField(\"최고관리자 권한\", default=False)\n    USERNAME_FIELD = \"email\"\n    REQUIRED_FIELDS = []\n    objects = UserManager()\n    def __str__(self):",
         "detail": "user.models",
         "documentation": {}
     },
@@ -551,7 +709,7 @@
         "kind": 6,
         "importPath": "user.serializers",
         "description": "user.serializers",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UserModel\n        fields = [\"email\", \"password\"]\n    def create(self, validated_data):\n        password = validated_data.pop(\"password\", None)\n        user = UserModel(**validated_data)\n        user.set_password(password)\n        user.save()",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UserModel\n        fields = [\"email\"]\n    def create(self, validated_data):\n        password = validated_data.pop(\"password\", None)\n        user = UserModel(**validated_data)\n        user.set_password(password)\n        user.save()\n        return user",
         "detail": "user.serializers",
         "documentation": {}
     },
@@ -560,7 +718,7 @@
         "kind": 5,
         "importPath": "user.urls",
         "description": "user.urls",
-        "peekOfCode": "urlpatterns = [\n    # path('', views.함수명.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"users/\", views.UserView.as_view()),\n    path(\"login/\", TokenObtainPairView.as_view(), name=\"token_obtain_pair\"),\n    path(\"login/refresh/\", TokenRefreshView.as_view(), name=\"token_refresh\"),\n    path(\"logout/\", TokenBlacklistView.as_view(), name=\"token_blacklist\"),\n]",
         "detail": "user.urls",
         "documentation": {}
     },
@@ -569,7 +727,7 @@
         "kind": 6,
         "importPath": "user.views",
         "description": "user.views",
-        "peekOfCode": "class UserView(APIView):\n    '''\n    회원 가입 및 탈퇴 처리\n    '''\n    def get(self, request):\n        return Response({'message': 'get method!!'})\n    def post(self, request):\n        return Response({'message': 'post method!!'})\n    def delete(self, request):\n        return Response({'message': 'delete method!!'})",
+        "peekOfCode": "class UserView(APIView):\n    \"\"\"\n    회원 가입\n    \"\"\"\n    permission_classes = [permissions.AllowAny]\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)",
         "detail": "user.views",
         "documentation": {}
     },
