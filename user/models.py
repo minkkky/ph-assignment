@@ -25,7 +25,7 @@ class User(AbstractBaseUser):
     password = models.CharField("비밀번호", max_length=128)
     join_date = models.DateTimeField("가입일", auto_now_add=True)
     is_active = models.BooleanField("계정 활성화 여부", default=True)
-    is_admin = models.BooleanField("관리자 권한", default=False)
+    is_admin = models.BooleanField("최고관리자 권한", default=False)
 
     USERNAME_FIELD = "email"
 
@@ -35,3 +35,13 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return self.email
+
+    def has_perm(self, perm, obj=None):
+        return True
+    
+    def has_module_perms(self, receipt): 
+        return True
+    
+    @property
+    def is_staff(self): 
+        return self.is_admin

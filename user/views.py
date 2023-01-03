@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -11,7 +10,7 @@ class UserView(APIView):
     회원 가입
     """
 
-    ermission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         user_serializer = UserSerializer(data=request.data)
