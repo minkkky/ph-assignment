@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from rest_framework import serializers
 
 from receipt.models import Permalink as PermalinkModel
@@ -19,16 +21,18 @@ class ReceiptSerializer(serializers.ModelSerializer):
 
         content_data = data.get("content")
         desc_data = data.get("desc")
-        
-        if "<" in content_data:
-            content_data = content_data.replace("<", "&lt;")
-            if ">" in content_data:
-                data["content"] = content_data.replace(">", "&gt;")
 
-        if "<" in desc_data:
-            desc_data = desc_data.replace("<", "&lt;")
-            if ">" in desc_data:
-                data["desc"] = desc_data.replace(">", "&gt;")
+        if content_data:
+            if "<" in content_data:
+                content_data = content_data.replace("<", "&lt;")
+                if ">" in content_data:
+                    data["content"] = content_data.replace(">", "&gt;")
+
+        if desc_data:
+            if "<" in desc_data:
+                desc_data = desc_data.replace("<", "&lt;")
+                if ">" in desc_data:
+                    data["desc"] = desc_data.replace(">", "&gt;")
 
         return data
 
@@ -36,6 +40,12 @@ class ReceiptSerializer(serializers.ModelSerializer):
         receipt = ReceiptModel(**validated_data)
         receipt.save()
         return receipt
+
+    def update(self, instance, validated_data):
+        for key, value in validated_data.items():
+            setattr(instance, key, value)
+        instance.save()
+        return instance
 
 
 class PermalinkSerializer(serializers.ModelSerializer):

@@ -59,6 +59,22 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -212,14 +228,6 @@
         "documentation": {}
     },
     {
-        "label": "filters",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
         "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -284,11 +292,19 @@
         "documentation": {}
     },
     {
-        "label": "DjangoFilterBackend",
-        "importPath": "django_filters.rest_framework",
-        "description": "django_filters.rest_framework",
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
         "isExtraImport": true,
-        "detail": "django_filters.rest_framework",
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "DateFormat",
+        "importPath": "django.utils.dateformat",
+        "description": "django.utils.dateformat",
+        "isExtraImport": true,
+        "detail": "django.utils.dateformat",
         "documentation": {}
     },
     {
@@ -510,7 +526,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "LANGUAGE_CODE = \"ko-KR\"\nTIME_ZONE = \"Asia/Seoul\"\nUSE_I18N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -519,7 +535,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"",
+        "peekOfCode": "TIME_ZONE = \"Asia/Seoul\"\nUSE_I18N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -528,7 +544,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -537,7 +553,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta\nSIMPLE_JWT = {",
+        "peekOfCode": "USE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nAUTH_USER_MODEL = \"user.User\"\nfrom datetime import timedelta\nSIMPLE_JWT = {",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -645,7 +661,7 @@
         "kind": 6,
         "importPath": "receipt.serializers",
         "description": "receipt.serializers",
-        "peekOfCode": "class ReceiptSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ReceiptModel\n        fields = [\"user\", \"date\", \"content\", \"outlay\", \"desc\", \"create_date\"]\nclass PermalinkSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PermalinkModel\n        fields = [\"url\", \"refer_to\", \"end_date\"]",
+        "peekOfCode": "class ReceiptSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ReceiptModel\n        fields = \"__all__\"\n    def validate(self, data):\n        outlay_data = data.get(\"outlay\")\n        if outlay_data == 0:\n            raise serializers.ValidationError(\n                detail={\"error\": \"지출은 0원일 수 없습니다\"},\n            )",
         "detail": "receipt.serializers",
         "documentation": {}
     },
@@ -672,7 +688,7 @@
         "kind": 6,
         "importPath": "receipt.views",
         "description": "receipt.views",
-        "peekOfCode": "class ReceiptListView(APIView):\n    # 내가 작성한 내역을 가져온다.\n    def get(self, request):\n        user = User.objects.get(id=request.user.id)\n        receipts = user.receipt_set.all()\n        receipt_serializer = ReceiptSerializer(receipts, many=True).data\n        return Response(receipt_serializer, status=status.HTTP_200_OK)\n    # 새로운 지출 내역을 작성한다.\n    def post(self, request):\n        data = request.data.copy()",
+        "peekOfCode": "class ReceiptListView(APIView):\n    # 내가 작성한 내역을 가져온다.\n    def get(self, request, **kwargs):\n        user = User.objects.get(id=request.user.id)\n        # content = request.GET.get('content')\n        # outlay = request.GET.get('outlay')\n        # date = request.GET.get('date')\n        # print(f'content: {content}, outlay: {outlay}, date: {date}')\n        # user = User.objects.get(id=request.user.id)\n        # if not date:",
         "detail": "receipt.views",
         "documentation": {}
     },
@@ -681,7 +697,7 @@
         "kind": 6,
         "importPath": "receipt.views",
         "description": "receipt.views",
-        "peekOfCode": "class ReceiptDetailView(APIView):\n    # 특정 지출의 상세 내역을 확인한다.\n    def get(self, request, pk):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)\n    # 특정 지출의 내용을 복사하여 새로운 지출 내역을 작성한다.\n    def post(self, request, pk):\n        return Response({\"message\": \"post method!!\"}, status=status.HTTP_200_OK)\n    # 특정 지출의 내용을 수정한다.\n    def put(self, request, pk):\n        return Response({\"message\": \"put method!!\"}, status=status.HTTP_200_OK)",
+        "peekOfCode": "class ReceiptDetailView(APIView):\n    def get_object(self, receipt_id):\n        try:\n            return Receipt.objects.get(id=receipt_id)\n        except Receipt.DoesNotExist:\n            raise Http404\n    # 특정 지출의 상세 내역을 확인한다.\n    def get(self, request, receipt_id):\n        user = request.user.id\n        receipt = self.get_object(receipt_id)",
         "detail": "receipt.views",
         "documentation": {}
     },
@@ -744,7 +760,7 @@
         "kind": 6,
         "importPath": "user.views",
         "description": "user.views",
-        "peekOfCode": "class SignupView(APIView):\n    # 회원 가입\n    permission_classes = [permissions.AllowAny]\n    def get(self, request):\n        return Response({\"message\": \"Hello, world\"}, status=status.HTTP_200_OK)\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)",
+        "peekOfCode": "class SignupView(APIView):\n    # 회원 가입\n    permission_classes = [permissions.AllowAny]\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)\n        return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)",
         "detail": "user.views",
         "documentation": {}
     },
