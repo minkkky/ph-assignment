@@ -5,11 +5,8 @@ from rest_framework.views import APIView
 from .serializers import UserSerializer
 
 
-class UserView(APIView):
-    """
-    회원 가입
-    """
-
+class SignupView(APIView):
+    # 회원 가입
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):

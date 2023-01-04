@@ -38,10 +38,10 @@ class User(AbstractBaseUser):
 
     def has_perm(self, perm, obj=None):
         return True
-    
-    def has_module_perms(self, receipt): 
+
+    def has_module_perms(self, receipt):
         return True
-    
+
     @property
-    def is_staff(self): 
+    def is_staff(self):
         return self.is_admin

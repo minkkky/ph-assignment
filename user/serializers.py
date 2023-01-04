@@ -1,5 +1,6 @@
+import datetime
+
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from user.models import User as UserModel
 
@@ -7,7 +8,7 @@ from user.models import User as UserModel
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserModel
-        fields = ["email"]
+        fields = ["email", "password"]
 
     def create(self, validated_data):
         password = validated_data.pop("password", None)
