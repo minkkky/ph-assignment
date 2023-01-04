@@ -42,6 +42,15 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
@@ -114,6 +123,15 @@
         "documentation": {}
     },
     {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -170,15 +188,6 @@
         "documentation": {}
     },
     {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -203,7 +212,7 @@
         "documentation": {}
     },
     {
-        "label": "permissions",
+        "label": "filters",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -275,6 +284,14 @@
         "documentation": {}
     },
     {
+        "label": "DjangoFilterBackend",
+        "importPath": "django_filters.rest_framework",
+        "description": "django_filters.rest_framework",
+        "isExtraImport": true,
+        "detail": "django_filters.rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "Response",
         "importPath": "rest_framework.response",
         "description": "rest_framework.response",
@@ -304,6 +321,22 @@
         "description": "rest_framework.views",
         "isExtraImport": true,
         "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user.models",
+        "description": "user.models",
+        "isExtraImport": true,
+        "detail": "user.models",
         "documentation": {}
     },
     {
@@ -320,22 +353,6 @@
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
         "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "TokenObtainPairSerializer",
-        "importPath": "rest_framework_simplejwt.serializers",
-        "description": "rest_framework_simplejwt.serializers",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "user.models",
-        "description": "user.models",
-        "isExtraImport": true,
-        "detail": "user.models",
         "documentation": {}
     },
     {
@@ -439,7 +456,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "ROOT_URLCONF = \"Payhere.urls\"\nREST_FRAMEWORK = {\n    \"DEFAULT_PERMISSION_CLASSES\": [\"rest_framework.permissions.AllowAny\"],\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n        \"rest_framework_simplejwt.authentication.JWTAuthentication\",\n        # \"rest_framework.authentication.TokenAuthentication\",\n        # \"rest_framework.authentication.SessionAuthentication\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",",
+        "peekOfCode": "ROOT_URLCONF = \"Payhere.urls\"\nREST_FRAMEWORK = {\n    \"DEFAULT_PERMISSION_CLASSES\": [\"rest_framework.permissions.IsAuthenticated\"],\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n        \"rest_framework_simplejwt.authentication.JWTAuthentication\",\n        # \"rest_framework.authentication.TokenAuthentication\",\n        # \"rest_framework.authentication.SessionAuthentication\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -448,7 +465,7 @@
         "kind": 5,
         "importPath": "Payhere.settings",
         "description": "Payhere.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    \"DEFAULT_PERMISSION_CLASSES\": [\"rest_framework.permissions.AllowAny\"],\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n        \"rest_framework_simplejwt.authentication.JWTAuthentication\",\n        # \"rest_framework.authentication.TokenAuthentication\",\n        # \"rest_framework.authentication.SessionAuthentication\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n        \"rest_framework.parsers.FormParser\",",
+        "peekOfCode": "REST_FRAMEWORK = {\n    \"DEFAULT_PERMISSION_CLASSES\": [\"rest_framework.permissions.IsAuthenticated\"],\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n        \"rest_framework_simplejwt.authentication.JWTAuthentication\",\n        # \"rest_framework.authentication.TokenAuthentication\",\n        # \"rest_framework.authentication.SessionAuthentication\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n        \"rest_framework.parsers.FormParser\",",
         "detail": "Payhere.settings",
         "documentation": {}
     },
@@ -565,7 +582,7 @@
         "kind": 5,
         "importPath": "Payhere.urls",
         "description": "Payhere.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"user.urls\")),\n    path(\"receipts/\", include(\"receipt.urls\")),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"users/\", include(\"user.urls\")),\n    path(\"receipts/\", include(\"receipt.urls\")),\n]",
         "detail": "Payhere.urls",
         "documentation": {}
     },
@@ -592,7 +609,7 @@
         "kind": 6,
         "importPath": "receipt.admin",
         "description": "receipt.admin",
-        "peekOfCode": "class ReceiptAdmin(admin.ModelAdmin):\n    list_display = ['id', 'user', 'content', 'outlay']\n    list_display_links = ['content', 'outlay']\n    list_filter = ('user',)\nadmin.site.register(Receipt, ReceiptAdmin)\nadmin.site.register(Permalink)",
+        "peekOfCode": "class ReceiptAdmin(admin.ModelAdmin):\n    list_display = [\"id\", \"user\", \"content\", \"outlay\"]\n    list_display_links = [\"content\", \"outlay\"]\n    list_filter = (\"user\",)\nadmin.site.register(Receipt, ReceiptAdmin)\nadmin.site.register(Permalink)",
         "detail": "receipt.admin",
         "documentation": {}
     },
@@ -655,7 +672,7 @@
         "kind": 6,
         "importPath": "receipt.views",
         "description": "receipt.views",
-        "peekOfCode": "class ReceiptListView(APIView):\n    permission_classes = [permissions.IsAuthenticated]\n    def get(self, request):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)\n    def post(self, request):\n        return Response({\"message\": \"post method!!\"}, status=status.HTTP_200_OK)\nclass ReceiptDetailView(APIView):\n    permission_classes = [permissions.IsAuthenticated]\n    def get(self, request):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)",
+        "peekOfCode": "class ReceiptListView(APIView):\n    # 내가 작성한 내역을 가져온다.\n    def get(self, request):\n        user = User.objects.get(id=request.user.id)\n        receipts = user.receipt_set.all()\n        receipt_serializer = ReceiptSerializer(receipts, many=True).data\n        return Response(receipt_serializer, status=status.HTTP_200_OK)\n    # 새로운 지출 내역을 작성한다.\n    def post(self, request):\n        data = request.data.copy()",
         "detail": "receipt.views",
         "documentation": {}
     },
@@ -664,7 +681,7 @@
         "kind": 6,
         "importPath": "receipt.views",
         "description": "receipt.views",
-        "peekOfCode": "class ReceiptDetailView(APIView):\n    permission_classes = [permissions.IsAuthenticated]\n    def get(self, request):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)\n    def post(self, request):\n        return Response({\"message\": \"post method!!\"}, status=status.HTTP_200_OK)\n    def put(self, request):\n        return Response({\"message\": \"put method!!\"}, status=status.HTTP_200_OK)\n    def delete(self, request):\n        return Response({\"message\": \"delete method!!\"}, status=status.HTTP_200_OK)",
+        "peekOfCode": "class ReceiptDetailView(APIView):\n    # 특정 지출의 상세 내역을 확인한다.\n    def get(self, request, pk):\n        return Response({\"message\": \"get method!!\"}, status=status.HTTP_200_OK)\n    # 특정 지출의 내용을 복사하여 새로운 지출 내역을 작성한다.\n    def post(self, request, pk):\n        return Response({\"message\": \"post method!!\"}, status=status.HTTP_200_OK)\n    # 특정 지출의 내용을 수정한다.\n    def put(self, request, pk):\n        return Response({\"message\": \"put method!!\"}, status=status.HTTP_200_OK)",
         "detail": "receipt.views",
         "documentation": {}
     },
@@ -709,7 +726,7 @@
         "kind": 6,
         "importPath": "user.serializers",
         "description": "user.serializers",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UserModel\n        fields = [\"email\"]\n    def create(self, validated_data):\n        password = validated_data.pop(\"password\", None)\n        user = UserModel(**validated_data)\n        user.set_password(password)\n        user.save()\n        return user",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UserModel\n        fields = [\"email\", \"password\"]\n    def create(self, validated_data):\n        password = validated_data.pop(\"password\", None)\n        user = UserModel(**validated_data)\n        user.set_password(password)\n        user.save()\n        return user",
         "detail": "user.serializers",
         "documentation": {}
     },
@@ -718,16 +735,16 @@
         "kind": 5,
         "importPath": "user.urls",
         "description": "user.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"users/\", views.UserView.as_view()),\n    path(\"login/\", TokenObtainPairView.as_view(), name=\"token_obtain_pair\"),\n    path(\"login/refresh/\", TokenRefreshView.as_view(), name=\"token_refresh\"),\n    path(\"logout/\", TokenBlacklistView.as_view(), name=\"token_blacklist\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.SignupView.as_view()),\n    path(\"login/\", TokenObtainPairView.as_view(), name=\"token_obtain_pair\"),\n    path(\"login/refresh/\", TokenRefreshView.as_view(), name=\"token_refresh\"),\n    path(\"logout/\", TokenBlacklistView.as_view(), name=\"token_blacklist\"),\n]",
         "detail": "user.urls",
         "documentation": {}
     },
     {
-        "label": "UserView",
+        "label": "SignupView",
         "kind": 6,
         "importPath": "user.views",
         "description": "user.views",
-        "peekOfCode": "class UserView(APIView):\n    \"\"\"\n    회원 가입\n    \"\"\"\n    permission_classes = [permissions.AllowAny]\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)",
+        "peekOfCode": "class SignupView(APIView):\n    # 회원 가입\n    permission_classes = [permissions.AllowAny]\n    def get(self, request):\n        return Response({\"message\": \"Hello, world\"}, status=status.HTTP_200_OK)\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)",
         "detail": "user.views",
         "documentation": {}
     },
