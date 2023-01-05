@@ -17,20 +17,6 @@ class ReceiptListView(APIView):
     # 내가 작성한 내역을 가져온다.
     def get(self, request, **kwargs):
         user = User.objects.get(id=request.user.id)
-        # content = request.GET.get('content')
-        # outlay = request.GET.get('outlay')
-        # date = request.GET.get('date')
-        # print(f'content: {content}, outlay: {outlay}, date: {date}')
-
-        # user = User.objects.get(id=request.user.id)
-
-        # if not date:
-        #     date = DateFormat(datetime.now()).format('Y-m')
-
-        # if not content and not outlay:
-        #     receipts = user.receipt_set.filter(date__contains=date).order_by("date")
-
-        # receipts = user.receipt_set.filter(date__startswith=date).order_by("date")
         receipts = user.receipt_set.all().order_by("-date")
         receipt_serializer = ReceiptSerializer(receipts, many=True).data
         return Response(receipt_serializer, status=status.HTTP_200_OK)

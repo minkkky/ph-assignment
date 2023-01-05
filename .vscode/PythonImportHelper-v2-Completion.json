@@ -59,15 +59,7 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
+        "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -139,6 +131,15 @@
         "documentation": {}
     },
     {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -203,15 +204,6 @@
         "documentation": {}
     },
     {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -229,6 +221,14 @@
     },
     {
         "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "permissions",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -308,11 +308,11 @@
         "documentation": {}
     },
     {
-        "label": "DateFormat",
-        "importPath": "django.utils.dateformat",
-        "description": "django.utils.dateformat",
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
         "isExtraImport": true,
-        "detail": "django.utils.dateformat",
+        "detail": "django.utils",
         "documentation": {}
     },
     {
@@ -687,7 +687,7 @@
         "kind": 6,
         "importPath": "receipt.serializers",
         "description": "receipt.serializers",
-        "peekOfCode": "class PermalinkSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PermalinkModel\n        fields = [\"url\", \"refer_to\", \"end_date\"]",
+        "peekOfCode": "class PermalinkSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PermalinkModel\n        fields = \"__all__\"\n    def create(self, validated_data):\n        permalink = PermalinkModel(**validated_data)\n        permalink.save()\n        return permalink",
         "detail": "receipt.serializers",
         "documentation": {}
     },
@@ -696,7 +696,7 @@
         "kind": 5,
         "importPath": "receipt.urls",
         "description": "receipt.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.ReceiptListView.as_view()),\n    path(\"<int:receipt_id>/\", views.ReceiptDetailView.as_view()),\n    path(\"shared/<int:permalink_id>/\", views.PermalinkView.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.ReceiptListView.as_view()),\n    path(\"<int:receipt_id>/\", views.ReceiptDetailView.as_view()),\n    path(\"<int:receipt_id>/shared/\", views.PermalinkAdminView.as_view()),\n    path(\"shared/<int:permalink_id>/\", views.PermalinkView.as_view()),\n]",
         "detail": "receipt.urls",
         "documentation": {}
     },
@@ -705,7 +705,7 @@
         "kind": 6,
         "importPath": "receipt.views",
         "description": "receipt.views",
-        "peekOfCode": "class ReceiptListView(APIView):\n    # 내가 작성한 내역을 가져온다.\n    def get(self, request, **kwargs):\n        user = User.objects.get(id=request.user.id)\n        # content = request.GET.get('content')\n        # outlay = request.GET.get('outlay')\n        # date = request.GET.get('date')\n        # print(f'content: {content}, outlay: {outlay}, date: {date}')\n        # user = User.objects.get(id=request.user.id)\n        # if not date:",
+        "peekOfCode": "class ReceiptListView(APIView):\n    # 내가 작성한 내역을 가져온다.\n    def get(self, request, **kwargs):\n        user = User.objects.get(id=request.user.id)\n        receipts = user.receipt_set.all().order_by(\"-date\")\n        receipt_serializer = ReceiptSerializer(receipts, many=True).data\n        return Response(receipt_serializer, status=status.HTTP_200_OK)\n    # 새로운 지출 내역을 작성한다.\n    def post(self, request):\n        data = request.data.copy()",
         "detail": "receipt.views",
         "documentation": {}
     },
@@ -723,7 +723,16 @@
         "kind": 6,
         "importPath": "receipt.views",
         "description": "receipt.views",
-        "peekOfCode": "class PermalinkView(APIView):\n    def get(self, request, permalink_id):\n        try:\n            perma = Permalink.objects.get(id=permalink_id)\n        except Permalink.DoesNotExist:\n            raise Http404\n        receipt = Receipt.objects.get(id=perma.refer_to)\n        receipt_serializer = ReceiptSerializer(receipt).data\n        return Response(receipt_serializer, status=status.HTTP_200_OK)\n    def post(self, request, permalink_id=None):",
+        "peekOfCode": "class PermalinkView(APIView):\n    permission_classes = [permissions.AllowAny]\n    # 공유된 지출 내역을 조회한다.\n    def get(self, request, permalink_id):\n        try:\n            perma = Permalink.objects.get(id=permalink_id)\n        except Permalink.DoesNotExist:\n            raise Http404\n        # 유효기간 체크\n        if perma.end_date > timezone.now():",
+        "detail": "receipt.views",
+        "documentation": {}
+    },
+    {
+        "label": "PermalinkAdminView",
+        "kind": 6,
+        "importPath": "receipt.views",
+        "description": "receipt.views",
+        "peekOfCode": "class PermalinkAdminView(APIView):\n    # 특정 지출 내역을 공유한다.\n    def post(self, request, receipt_id):\n        user = request.user.id\n        receipt = Receipt.objects.get(id=receipt_id)\n        if user == receipt.user.id:\n            end_date = timezone.now() + timedelta(minutes=3)\n            request.data[\"refer_to\"] = receipt_id\n            request.data[\"end_date\"] = end_date\n            perma_serializer = PermalinkSerializer(data=request.data)",
         "detail": "receipt.views",
         "documentation": {}
     },
