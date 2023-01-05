@@ -6,7 +6,6 @@ from .serializers import UserSerializer
 
 
 class SignupView(APIView):
-    # 회원 가입
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):

@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from rest_framework import serializers
 
 from receipt.models import Permalink as PermalinkModel
@@ -51,4 +49,10 @@ class ReceiptSerializer(serializers.ModelSerializer):
 class PermalinkSerializer(serializers.ModelSerializer):
     class Meta:
         model = PermalinkModel
-        fields = ["url", "refer_to", "end_date"]
+        fields = "__all__"
+
+    def create(self, validated_data):
+
+        permalink = PermalinkModel(**validated_data)
+        permalink.save()
+        return permalink

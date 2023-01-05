@@ -11,6 +11,5 @@ class Receipt(models.Model):
 
 
 class Permalink(models.Model):
-    url = models.URLField(max_length=200)
     refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)
     end_date = models.DateTimeField()

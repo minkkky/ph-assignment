@@ -139,15 +139,6 @@
         "documentation": {}
     },
     {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
         "label": "settings",
         "importPath": "django.conf",
         "description": "django.conf",
@@ -172,6 +163,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -201,6 +200,15 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
         "documentation": {}
     },
     {
@@ -621,6 +629,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "receipt.migrations.0002_remove_permalink_encode",
+        "description": "receipt.migrations.0002_remove_permalink_encode",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"receipt\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name=\"permalink\",\n            name=\"encode\",\n        ),\n    ]",
+        "detail": "receipt.migrations.0002_remove_permalink_encode",
+        "documentation": {}
+    },
+    {
         "label": "ReceiptAdmin",
         "kind": 6,
         "importPath": "receipt.admin",
@@ -643,7 +660,7 @@
         "kind": 6,
         "importPath": "receipt.models",
         "description": "receipt.models",
-        "peekOfCode": "class Receipt(models.Model):\n    user = models.ForeignKey(\"user.User\", on_delete=models.CASCADE)\n    date = models.DateTimeField()\n    content = models.CharField(max_length=50)\n    outlay = models.IntegerField()\n    desc = models.CharField(max_length=200, blank=True)\n    create_date = models.DateTimeField(auto_now_add=True)\nclass Permalink(models.Model):\n    url = models.URLField(max_length=200)\n    refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)",
+        "peekOfCode": "class Receipt(models.Model):\n    user = models.ForeignKey(\"user.User\", on_delete=models.CASCADE)\n    date = models.DateTimeField()\n    content = models.CharField(max_length=50)\n    outlay = models.IntegerField()\n    desc = models.CharField(max_length=200, blank=True)\n    create_date = models.DateTimeField(auto_now_add=True)\nclass Permalink(models.Model):\n    refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)\n    end_date = models.DateTimeField()",
         "detail": "receipt.models",
         "documentation": {}
     },
@@ -652,7 +669,7 @@
         "kind": 6,
         "importPath": "receipt.models",
         "description": "receipt.models",
-        "peekOfCode": "class Permalink(models.Model):\n    url = models.URLField(max_length=200)\n    refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)\n    end_date = models.DateTimeField()",
+        "peekOfCode": "class Permalink(models.Model):\n    refer_to = models.ForeignKey(Receipt, on_delete=models.CASCADE)\n    end_date = models.DateTimeField()",
         "detail": "receipt.models",
         "documentation": {}
     },
@@ -679,7 +696,7 @@
         "kind": 5,
         "importPath": "receipt.urls",
         "description": "receipt.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.ReceiptListView.as_view()),\n    path(\"<int:receipt_id>/\", views.ReceiptDetailView.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.ReceiptListView.as_view()),\n    path(\"<int:receipt_id>/\", views.ReceiptDetailView.as_view()),\n    path(\"shared/<int:permalink_id>/\", views.PermalinkView.as_view()),\n]",
         "detail": "receipt.urls",
         "documentation": {}
     },
@@ -698,6 +715,15 @@
         "importPath": "receipt.views",
         "description": "receipt.views",
         "peekOfCode": "class ReceiptDetailView(APIView):\n    def get_object(self, receipt_id):\n        try:\n            return Receipt.objects.get(id=receipt_id)\n        except Receipt.DoesNotExist:\n            raise Http404\n    # 특정 지출의 상세 내역을 확인한다.\n    def get(self, request, receipt_id):\n        user = request.user.id\n        receipt = self.get_object(receipt_id)",
+        "detail": "receipt.views",
+        "documentation": {}
+    },
+    {
+        "label": "PermalinkView",
+        "kind": 6,
+        "importPath": "receipt.views",
+        "description": "receipt.views",
+        "peekOfCode": "class PermalinkView(APIView):\n    def get(self, request, permalink_id):\n        try:\n            perma = Permalink.objects.get(id=permalink_id)\n        except Permalink.DoesNotExist:\n            raise Http404\n        receipt = Receipt.objects.get(id=perma.refer_to)\n        receipt_serializer = ReceiptSerializer(receipt).data\n        return Response(receipt_serializer, status=status.HTTP_200_OK)\n    def post(self, request, permalink_id=None):",
         "detail": "receipt.views",
         "documentation": {}
     },
@@ -760,7 +786,7 @@
         "kind": 6,
         "importPath": "user.views",
         "description": "user.views",
-        "peekOfCode": "class SignupView(APIView):\n    # 회원 가입\n    permission_classes = [permissions.AllowAny]\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)\n        return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)",
+        "peekOfCode": "class SignupView(APIView):\n    permission_classes = [permissions.AllowAny]\n    def post(self, request):\n        user_serializer = UserSerializer(data=request.data)\n        if user_serializer.is_valid(raise_exception=True):\n            user_serializer.save()\n            return Response({\"message\": \"회원가입 완료\"}, status=status.HTTP_200_OK)\n        return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)",
         "detail": "user.views",
         "documentation": {}
     },
